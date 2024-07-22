@@ -1,21 +1,17 @@
 import { Module } from '@nestjs/common';
 import { AppController } from './app.controller';
 import { AppService } from './app.service';
-import { CinemaModule } from './cinema/cinema.module';
+import { MovieModule } from './movie/movie.module';
 import { RouterModule } from '@nestjs/core';
 import { AuthModule } from './auth/auth.module';
+import { AuditoriumController } from './auditorium/auditorium.controller';
+import { AuditoriumModule } from './auditorium/auditorium.module';
 
 @Module({
   imports: [
-    CinemaModule,
+    MovieModule,
     AuthModule,
-    RouterModule.register([
-      {
-        path: 'cinema',
-        module: CinemaModule,
-      }
-    ]),
-    
+    AuditoriumModule
   ],
   controllers: [AppController],
   providers: [AppService],
