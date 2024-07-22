@@ -5,11 +5,9 @@ export class CinemaService {
   getCinemas(): any {
     return {
       data: [
-        {
-          name: 'Cine 1',
-          id: '1',
-          location: 'Location 1'
-        }
+        { id: 1, name: 'Sala 1', movies: [{ title: 'Movie 1', time: '14:00' }, { title: 'Movie 2', time: '16:00' }] },
+        { id: 2, name: 'Sala 2', movies: [{ title: 'Movie 3', time: '15:00' }, { title: 'Movie 4', time: '17:00' }] },
+        // Agrega más salas de cine según sea necesario
       ]
     };
   }
