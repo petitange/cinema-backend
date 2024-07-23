@@ -2,16 +2,16 @@ import { Module } from '@nestjs/common';
 import { AppController } from './app.controller';
 import { AppService } from './app.service';
 import { MovieModule } from './movie/movie.module';
-import { RouterModule } from '@nestjs/core';
 import { AuthModule } from './auth/auth.module';
-import { AuditoriumController } from './auditorium/auditorium.controller';
 import { AuditoriumModule } from './auditorium/auditorium.module';
+import { SeatModule } from './seat/seat.module';
 
 @Module({
   imports: [
     MovieModule,
     AuthModule,
-    AuditoriumModule
+    AuditoriumModule,
+    SeatModule
   ],
   controllers: [AppController],
   providers: [AppService],

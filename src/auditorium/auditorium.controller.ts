@@ -7,7 +7,9 @@ export class AuditoriumController {
 
   @Get('auditorium/:movieId')
   getMovies(@Param('movieId') movieId): string {
-    console.log({ movieId})
+    if (!movieId) {
+      throw new Error('Missing movie id');
+    }
     return this.AuditoriumService.getAuditorium(movieId);
   }
 }
